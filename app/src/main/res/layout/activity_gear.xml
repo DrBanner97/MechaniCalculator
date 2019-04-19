@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/gear_activity_container"
+    tools:context=".GearActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/gear_activity_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Gear"
+                android:textColor="#FFFFFF"
+                android:textSize="24sp"
+                android:layout_centerVertical="true"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/solve_gear_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:text="Solve"
+                android:padding="8dp"
+                android:background="?selectableItemBackground"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                android:layout_marginRight="16dp" />
+
+
+        </RelativeLayout>
+
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <TextView
+        android:id="@+id/material_gear_placeholder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="Material"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gear_activity_toolbar" />
+
+
+    <Spinner
+        android:id="@+id/gear_material_spinner"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/material_gear_placeholder"
+        app:layout_constraintTop_toBottomOf="@+id/gear_activity_toolbar"
+        app:layout_goneMarginStart="16dp" />
+
+
+    <ImageView
+        android:id="@+id/rupee_icons"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="8dp"
+        android:src="@drawable/rupee"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/burning_mass_placeholder"
+        app:layout_constraintTop_toBottomOf="@+id/material_gear_placeholder"/>
+
+
+    <EditText
+        android:id="@+id/gear_cost_rate_edit_text"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/text_input_border"
+        android:inputType="numberDecimal"
+        android:paddingStart="8dp"
+        android:paddingTop="3dp"
+        android:paddingEnd="8dp"
+        android:paddingBottom="3dp"
+        app:layout_constraintStart_toEndOf="@id/rupee_icons"
+        app:layout_constraintTop_toBottomOf="@+id/material_gear_placeholder" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="per kg"
+        app:layout_constraintBottom_toTopOf="@+id/burning_mass_placeholder"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.02"
+        app:layout_constraintEnd_toStartOf="@id/burning_mass_percentage_edit_text"
+        app:layout_constraintStart_toEndOf="@+id/gear_cost_rate_edit_text"
+        app:layout_constraintTop_toBottomOf="@+id/material_gear_placeholder" />
+
+    <TextView
+        android:id="@+id/burning_mass_placeholder"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="Burning mass %"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gear_cost_rate_edit_text" />
+
+    <EditText
+        android:id="@+id/gear_burning_mass_percentage_edit_text"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/text_input_border"
+        android:inputType="numberDecimal"
+        android:paddingStart="8dp"
+        android:paddingTop="3dp"
+        android:paddingEnd="8dp"
+        android:paddingBottom="3dp"
+        app:layout_constraintStart_toEndOf="@+id/burning_mass_placeholder"
+        app:layout_constraintTop_toBottomOf="@+id/gear_cost_rate_edit_text" />
+
+    <CheckBox
+        android:id="@+id/calculate_alternative_burning"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/burning_mass_placeholder"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+
+    <TextView
+        android:id="@+id/unit_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="Enter units in mm"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/calculate_alternative_burning"
+        />
+
+
+    <TextView
+        android:id="@+id/outer_diameter_placeholder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="Outer Diameter"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/unit_info"
+        />
+
+
+    <EditText
+        android:id="@+id/gear_outer_diameter_edit_text"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/text_input_border"
+        android:inputType="numberDecimal"
+        android:paddingStart="8dp"
+        android:paddingTop="3dp"
+        android:paddingEnd="8dp"
+        android:paddingBottom="3dp"
+        app:layout_constraintStart_toEndOf="@+id/outer_diameter_placeholder"
+        app:layout_constraintTop_toBottomOf="@+id/unit_info" />
+
+
+
+    <TextView
+        android:id="@+id/inner_diameter_placeholder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="Inner Diameter"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/outer_diameter_placeholder"
+        />
+
+
+    <EditText
+        android:id="@+id/gear_inner_diameter_edit_text"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/text_input_border"
+        android:inputType="numberDecimal"
+        android:paddingStart="8dp"
+        android:paddingTop="3dp"
+        android:paddingEnd="8dp"
+        android:paddingBottom="3dp"
+        app:layout_constraintStart_toEndOf="@+id/outer_diameter_placeholder"
+        app:layout_constraintTop_toBottomOf="@+id/outer_diameter_placeholder" />
+
+    <TextView
+        android:id="@+id/length_placeholder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="Thickness"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inner_diameter_placeholder"
+        />
+
+
+    <EditText
+        android:id="@+id/gear_length_edit_text"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/text_input_border"
+        android:inputType="numberDecimal"
+        android:paddingStart="8dp"
+        android:paddingTop="3dp"
+        android:paddingEnd="8dp"
+        android:paddingBottom="3dp"
+        app:layout_constraintStart_toEndOf="@+id/outer_diameter_placeholder"
+        app:layout_constraintTop_toBottomOf="@+id/inner_diameter_placeholder" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
